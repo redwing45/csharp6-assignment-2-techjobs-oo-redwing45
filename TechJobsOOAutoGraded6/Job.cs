@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Reflection;
+using System.Text;
 using System.Xml.Linq;
 
 namespace TechJobsOOAutoGraded6
@@ -62,14 +64,36 @@ namespace TechJobsOOAutoGraded6
 
         public override string ToString()
         {
-            var DiffString = "\n" + Name + "\n";
-            if (props == null)
+          StringBuilder builder = new StringBuilder();     //adding newLine
+            builder.AppendLine($"ID: {Id}");
+            builder.AppendLine($"Name: {Name}");
+            builder.AppendLine($"Employer: {EmployerName}");
+            builder.AppendLine($"Location: {EmployerLocation}");
+            builder.AppendLine($"Position Type: {JobType}");
+            builder.AppendLine($"Core Competency: {JobCoreCompetency}");
+
+            if (builder == null)
             {
                 Console.WriteLine("Data not available");
             }
-            
+            //saying data not availabe            
+
+            return builder.ToString();
         }
+        
     }
 }
-
-Console.WriteLine(Name);
+/*
+ public static string PropertyList(this object obj)
+{
+    var props = obj.GetType().GetProperties();
+    var sb = new StringBuilder();
+    foreach (var p in props)
+    {
+        sb.AppendLine(p.Name + ": " + p.GetValue(obj, null));
+    }
+    return sb.ToString();
+}
+  var DiffString = Environment.NewLine + Name + Environment.NewLine; 
+                
+*/

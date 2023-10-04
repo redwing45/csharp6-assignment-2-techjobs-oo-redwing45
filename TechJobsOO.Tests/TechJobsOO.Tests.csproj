@@ -12,6 +12,16 @@
     <Compile Remove="Location.cs" />
   </ItemGroup>
 
+
+	<ItemGroup>
+		<None Update="EmptyFieldTest.txt">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="StartsAndEndsWithNewLine.txt">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+	</ItemGroup>
+	
   <ItemGroup>
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.1.0" />
     <PackageReference Include="MSTest.TestAdapter" Version="2.2.8" />

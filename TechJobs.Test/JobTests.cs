@@ -33,19 +33,21 @@ namespace TechJobs.Tests
         public void TestToStringStartsAndEndsWithNewLine()
         {
             
-            Assert.Equals("\n" + job3.EmployerName + "\n", job3.EmployerName);
+            Assert.Equals(Environment.NewLine + job3.EmployerName.Value + Environment.NewLine, job3.EmployerName.ToString());
+            //should "\n" be Environment.NewLine?
         }
 
         public void TestToStringContainsCorrectLabelsAndData()
         {
 
-            Assert.Equals($"Location: {job3.EmployerLocation}", job3.ToString());
-                //should "\n" be Environment.NewLine?
+            Assert.Equals($"Location: {job3.EmployerLocation.Value}", job3.EmployerLocation.ToString());
+                
         }
 
         public void TestToStringHandlesEmptyField()
         {
-            
+                        Assert.IsTrue(job2.ToString().Contains("Data not available"));
         }
     }
 }
+
