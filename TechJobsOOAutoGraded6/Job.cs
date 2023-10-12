@@ -67,16 +67,19 @@ namespace TechJobsOOAutoGraded6
           StringBuilder builder = new StringBuilder();     //adding newLine
             builder.AppendLine($"ID: {Id}");
             builder.AppendLine($"Name: {Name}");
-            builder.AppendLine($"Employer: {EmployerName}");
-            builder.AppendLine($"Location: {EmployerLocation}");
-            builder.AppendLine($"Position Type: {JobType}");
-            builder.AppendLine($"Core Competency: {JobCoreCompetency}");
+            builder.AppendLine($"Employer: {EmployerName.ToString()}");
+            builder.AppendLine($"Location: {EmployerLocation.ToString()}");
+            builder.AppendLine($"Position Type: {JobType.ToString()}");
+            builder.AppendLine($"Core Competency: {JobCoreCompetency.ToString()}");
 
             if (builder == null)
             {
                 Console.WriteLine("Data not available");
+            }else{
+                
+                return builder.ToString();
             }
-            //saying data not availabe            
+
 
             return builder.ToString();
         }

@@ -10,7 +10,7 @@ namespace TechJobsOOAutoGraded6
     {
         public int Id { get; }
         private static int nextId = 1;
-        public string Value { get; set; }
+        public string? Value { get; set; }
 
         public JobField()
         {
@@ -35,7 +35,17 @@ namespace TechJobsOOAutoGraded6
 
         public override string ToString()
         {
-            return Value;
+            if(Value != null && Value != "")
+            {
+                return Value;
+            }
+            else
+            {
+                return "Data not available";
+            }
+           
+           
+
         }
     }
 }
